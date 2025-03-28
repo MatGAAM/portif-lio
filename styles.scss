@@ -1,0 +1,400 @@
+@import "./scss/_colors.scss";
+@import "./scss/_mixins.scss";
+
+@include global-reset;
+
+body {
+  @include global-font;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
+
+  padding: 1rem 1.5rem;
+
+  background-color: $primary-color;
+
+  .logo {
+    @include centralized;
+    height: 3rem;
+    width: 5rem;
+    font-size: 2rem;
+    position: relative;
+
+    color: $white;
+    background-color: $primary-color;
+    overflow: hidden;
+
+    span {
+      color: $highlight-color;
+    }
+  }
+
+  .navbar {
+    color: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      width: 70%;
+      gap: 20px;
+      li {
+        display: inline-block;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $white;
+          text-decoration: none;
+          gap: 15px;
+
+          .material-icons {
+            @include centralized;
+            margin: 0;
+            padding: 0;
+          }
+
+          &:hover {
+            color: $primary-light;
+            svg {
+              fill: $primary-light;
+            }
+          }
+          &:visited {
+            color: $gray-dark;
+            svg {
+              fill: $gray-dark;
+            }
+          }
+        }
+      }
+      .contact-header-li {
+        div {
+          border: solid;
+          border-color: $highlight-color;
+          padding: 0.3rem;
+          a {
+            &:hover {
+              color: $primary-light;
+            }
+            &:visited {
+              color: $gray-dark;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#home {
+  @include centralized;
+  height: 100vh;
+  width: 100vw; // Para garantir que ocupe toda a largura
+  overflow-x: hidden;
+  background-color: $primary-color;
+
+  .container-home {
+    @include centralized;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    .wrapper-description {
+      @include centralized;
+      flex-direction: column;
+      position: relative;
+      margin: 0 auto;
+      width: 50%;
+      height: auto; // Ajuste a altura conforme     necessário
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .description {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+
+        h1 {
+          font-size: 6rem;
+          color: $highlight-color;
+          text-shadow: 3px 3px 5px rgba($color: $highlight-color, $alpha: 0.5);
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .hello {
+          font-size: 1.8rem;
+          color: $secondary-color;
+          text-shadow: 3px 3px 5px rgba($color: $secondary-color, $alpha: 0.5);
+        }
+        .carrer-overview {
+          font-size: 1.5rem;
+          color: $tertiary-color;
+          text-shadow: 3px 3px 5px rgba($color: $tertiary-color, $alpha: 0.5);
+        }
+      }
+    }
+
+    .wrapper-perfil-image {
+      @include centralized;
+      width: 23rem;
+      height: 35rem;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      margin: 2rem 5.5rem;
+      #perfil {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 20%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .wrapper-contacts {
+      .list-contacts {
+        list-style: none;
+      }
+    }
+
+    // .container-animation{
+
+    //   @include centralized;
+    //   position: relative;
+
+    //   .scroll-indicator {
+    //     position: relative;
+    //     bottom: 20px;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     width: 24px;
+    //     height: 24px;
+    //     border: 2px solid #fff;
+    //     border-radius: 50%;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     cursor: pointer;
+
+    //     &::before {
+    //       content: '';
+    //       width: 8px;
+    //       height: 8px;
+    //       border-left: 2px solid #fff;
+    //       border-bottom: 2px solid #fff;
+    //       transform: rotate(-45deg);
+    //       animation: scroll 1.5s infinite;
+    //     }
+    //   }
+
+    //   @keyframes scroll {
+    //     0% {
+    //       transform: translateY(0) rotate(-45deg);
+    //       opacity: 1;
+    //     }
+    //     100% {
+    //       transform: translateY(8px) rotate(-45deg);
+    //       opacity: 0;
+    //     }
+    //   }
+    // }
+  }
+}
+
+#about {
+  @include centralized;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: $primary-light;
+
+  .container-about {
+    @include centralized;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    .title {
+      position: relative;
+      margin-block: 2rem;
+      margin-top: 3.5rem;
+      .title-about {
+        color: $highlight-color;
+        font-weight: bold;
+        font-size: 6rem;
+        color: $highlight-color;
+        text-shadow: 3px 3px 5px rgba($color: $highlight-color, $alpha: 0.5);
+      }
+    }
+    .wrapper-infos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      width: 100%;
+      columns: 2;
+      .wrapper-perfil-image {
+        width: 23rem;
+        height: 23rem;
+        overflow: hidden;
+        border-radius: 15px;
+
+        #perfil {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .wrapper-about {
+        width: 25rem;
+        flex-wrap: wrap;
+        color: $secondary-color;
+        font-size: 1.4rem;
+        gap: 1rem;
+
+        p {
+          margin-bottom: 2rem;
+        }
+
+        .button-cv {
+          background-color: #4a4a4a;
+          color: $secondary-color;
+          padding: 10px 20px;
+          font-weight: bold;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          text-decoration: none;
+
+          &:hover {
+            background-color: #5a5a5a;
+            box-shadow: 0 0 3px 2px $highlight-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+#projects {
+  @include centralized;
+  height: 100vh;
+  width: 100vw; // Para garantir que ocupe toda a largura
+  overflow-x: hidden;
+  background-color: $primary-color;
+  flex-wrap: wrap;
+
+  .container-projects {
+    display: grid;
+    grid-template-columns: repeat(4, 240px);
+    justify-content: center;
+    width: 100%;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    gap: 0.8rem;
+
+    .item {
+      width: 15rem;
+      height: 20rem;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 25px #fff;
+      filter: brightness(0);
+      transition: 0.5s;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    :hover {
+      filter: brightness(1);
+      transform: translateZ(100px);
+    }
+    :hover + * {
+      filter: brightness(0.3);
+      transform: translateZ(40px) rotateY(20deg);
+    }
+    :has(+ * :hover) {
+      filter: brightness(0.3);
+      transform: translateZ(40px) rotateY(-20deg);
+    }
+  }
+  //   .container-projects-description {
+  //     @include centralized;
+  //     justify-content: flex-start;
+  //     height: 10rem;
+  //     width: 80%;
+  //     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  //     background-color: $primary-light;
+  //     color: $secondary-color;
+  //     opacity: 0.3;
+  //     border-radius: 10px;
+  //   }
+}
+
+#contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 25vh;
+  width: 100vw; // Para garantir que ocupe toda a largura
+  overflow-x: hidden;
+  background-color: $primary-light;
+  color: $secondary-color;
+
+  .logos {
+    @include centralized;
+    gap: 15px;
+    width: 15%;
+    height: 100%;
+    overflow: hidden;
+
+    .linkedin {
+      @include icon-image-footer;
+      :hover {
+        filter: drop-shadow(3px 3px 3px rgba(48, 156, 245, 0.5));
+      }
+    }
+    .github {
+      @include icon-image-footer;
+      :hover {
+        filter: drop-shadow(3px 3px 3px #e8eaea);
+      }
+    }
+    .whatsapp {
+      @include icon-image-footer;
+      :hover {
+        filter: drop-shadow(3px 3px 3px #075e54);
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,34 @@
+# Node.js
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Ambiente e configs locais
+.env
+.env.local
+
+# IDEs e editores
+.vscode/
+.idea/
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Cache do SCSS
+*.css.map
+
+# Dependências específicas do React
+.next/
+.out/
+
+# Outros
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
