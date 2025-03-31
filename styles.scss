@@ -74,12 +74,6 @@ body {
               fill: $primary-light;
             }
           }
-          &:visited {
-            color: $gray-dark;
-            svg {
-              fill: $gray-dark;
-            }
-          }
         }
       }
       .contact-header-li {
@@ -90,9 +84,6 @@ body {
           a {
             &:hover {
               color: $primary-light;
-            }
-            &:visited {
-              color: $gray-dark;
             }
           }
         }
@@ -298,12 +289,132 @@ body {
   }
 }
 
+#social-hub {
+  @include centralized;
+  width: 100%;
+  height: 100vh;
+  background-color: $primary-color;
+  flex-direction: column;
+
+  .title {
+    position: relative;
+    margin-block: 2rem;
+    margin-top: 3.5rem;
+    h1 {
+      color: $highlight-color;
+      font-weight: bold;
+      font-size: 6rem;
+      color: $highlight-color;
+      text-shadow: 3px 3px 5px rgba($color: $highlight-color, $alpha: 0.5);
+    }
+  }
+  .wrapper {
+    @include centralized;
+    width: 100%;
+    height: 100%;
+
+    .container {
+      width: 100%;
+      height: 80%;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+
+      .card {
+        width: 80px;
+        border-radius: 0.75rem;
+        background-size: cover;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 2rem;
+        margin: 0 10px;
+        display: flex;
+        align-items: flex-end;
+        transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+        box-shadow: 0px 10px 30px -5px rgba($color: $highlight-color, $alpha:
+              0.8);
+
+        .row {
+          display: flex;
+          color: $secondary-color;
+          flex-wrap: nowrap;
+
+          .icon {
+            @include centralized;
+            width: 50px;
+            border-radius: 50%;
+            color: $secondary-color;
+            margin: 15px;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          .description {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+            width: 520px;
+            height: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition-delay: 0.3s;
+            transition: all 0.3s ease;
+
+            p {
+              color: $secondary-color;
+              margin-top: 5px;
+
+              a {
+                text-decoration: none;
+                color: $secondary-color;
+              }
+            }
+
+            h4 {
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+      .card[for="c1"] {
+        background-image: url("./assets/social/linkedin-post.jpeg");
+        background-position: center;
+      }
+      .card[for="c2"] {
+        background-image: url("./assets/social/linkedin-post.jpeg");
+        background-position: center;
+      }
+      .card[for="c3"] {
+        background-image: url("./assets/social/linkedin-post.jpeg");
+        background-position: center;
+      }
+
+      input {
+        display: none;
+      }
+
+      input:checked + .card {
+        width: 600px;
+
+        .description {
+          opacity: 1 !important;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
 #projects {
   @include centralized;
   height: 100vh;
   width: 100vw; // Para garantir que ocupe toda a largura
   overflow-x: hidden;
-  background-color: $primary-color;
+  background-color: $primary-light;
   flex-wrap: wrap;
 
   .container-projects {
@@ -364,7 +475,7 @@ body {
   height: 25vh;
   width: 100vw; // Para garantir que ocupe toda a largura
   overflow-x: hidden;
-  background-color: $primary-light;
+  background-color: $primary-color;
   color: $secondary-color;
 
   .logos {
