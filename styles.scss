@@ -420,6 +420,7 @@ body {
   .title {
     position: relative;
     margin-block: 2rem;
+    margin-top: 2.5rem;
     h1 {
       color: $highlight-color;
       font-weight: bold;
@@ -437,7 +438,7 @@ body {
     transform-style: preserve-3d;
     perspective: 1000px;
     gap: 0.8rem;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
 
     .item {
       width: 15rem;

@@ -364,6 +364,7 @@ body {
 #projects .title {
   position: relative;
   margin-block: 2rem;
+  margin-top: 2.5rem;
 }
 #projects .title h1 {
   color: #7E57C2;
@@ -380,7 +381,7 @@ body {
   transform-style: preserve-3d;
   perspective: 1000px;
   gap: 0.8rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 #projects .container-projects .item {
   width: 15rem;
