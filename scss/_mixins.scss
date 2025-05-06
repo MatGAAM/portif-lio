@@ -25,3 +25,40 @@
     object-fit: contain;
   }
 }
+
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin text-glow($color) {
+  text-shadow: 3px 3px 5px rgba($color, 0.5);
+}
+
+@mixin button-style {
+  background-color: #4a4a4a;
+  color: $secondary-color;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #5a5a5a;
+    box-shadow: 0 0 3px 2px $highlight-color;
+  }
+}
+
+@mixin responsive-font($desktop, $mobile) {
+  font-size: $desktop;
+
+  @media (max-width: 768px) {
+    font-size: $mobile;
+  }
+}
