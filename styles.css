@@ -4,6 +4,24 @@
   box-sizing: border-box;
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 body {
   font-family: "Poppins", sans-serif;
   max-width: 100vw;
@@ -182,7 +200,7 @@ body {
 }
 @media (max-width: 768px) {
   #home .container-home .wrapper-description .description h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 #home .container-home .wrapper-description .description h2 {
@@ -192,7 +210,7 @@ body {
 }
 @media (max-width: 768px) {
   #home .container-home .wrapper-description .description h2 {
-    font-size: 1.2rem;
+    font-size: 2rem;
   }
 }
 #home .container-home .wrapper-description .description h2 span {
@@ -202,8 +220,31 @@ body {
 }
 @media (max-width: 768px) {
   #home .container-home .wrapper-description .description h2 span {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
+}
+#home .container-home .scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 30px;
+  animation: fadeIn 2s ease forwards 1.5s;
+  opacity: 0;
+}
+#home .container-home .scroll-indicator span {
+  font-size: 1rem;
+  color: #f0f0f0;
+  margin-bottom: 0.5rem;
+}
+#home .container-home .scroll-indicator .arrow {
+  width: 24px;
+  height: 24px;
+}
+#home .container-home .scroll-indicator .arrow svg {
+  width: 100%;
+  height: 100%;
+  animation: bounce 1.5s infinite;
 }
 #home .container-home .wrapper-perfil-image {
   display: flex;
@@ -246,7 +287,7 @@ body {
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #2E3030;
 }
 #about .container-about {
@@ -263,6 +304,9 @@ body {
   position: relative;
   margin-block: 2rem;
   margin-top: 3.5rem;
+  opacity: 0;
+  animation: fadeIn;
+  animation-timeline: view();
 }
 #about .container-about .title .title-about {
   color: #7E57C2;
