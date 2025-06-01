@@ -308,14 +308,28 @@ body {
       margin-block: 2rem;
       margin-top: 3.5rem;
       opacity: 0;
-      animation: fadeIn;
-      animation-timeline: #{view()};
 
       .title-about {
         color: $highlight-color;
         font-weight: bold;
         @include responsive-font(6rem, 3rem);
         @include text-glow($highlight-color);
+      }
+    }
+
+    .slider-fade-in {
+      opacity: 0; // estado inicial
+      animation: sliderFadeIn 1s ease forwards;
+    }
+
+    @keyframes sliderFadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
       }
     }
 
