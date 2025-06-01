@@ -22,6 +22,21 @@
     transform: translateY(0);
   }
 }
+@keyframes sliderfadeInX {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.slider-fade-in-x {
+  opacity: 0;
+  animation: sliderFadeInX 2s ease forwards;
+}
+
 .slider-fade-in {
   opacity: 0;
   animation: sliderFadeIn 2s ease forwards;
