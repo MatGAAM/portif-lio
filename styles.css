@@ -22,6 +22,21 @@
     transform: translateY(0);
   }
 }
+.slider-fade-in {
+  opacity: 0;
+  animation: sliderFadeIn 2s ease forwards;
+}
+
+@keyframes sliderFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 body {
   font-family: "Poppins", sans-serif;
   max-width: 100vw;
@@ -305,8 +320,6 @@ body {
   margin-block: 2rem;
   margin-top: 3.5rem;
   opacity: 0;
-  animation: fadeIn;
-  animation-timeline: view();
 }
 #about .container-about .title .title-about {
   color: #7E57C2;
@@ -447,15 +460,16 @@ body {
   position: relative;
   margin-block: 2rem;
   margin-top: 3.5rem;
+  opacity: 0;
 }
-#social-hub .title h1 {
+#social-hub .title h2 {
   color: #7E57C2;
   font-weight: bold;
   font-size: 6rem;
   text-shadow: 3px 3px 5px rgba(126, 87, 194, 0.5);
 }
 @media (max-width: 768px) {
-  #social-hub .title h1 {
+  #social-hub .title h2 {
     font-size: 3rem;
   }
 }
@@ -602,15 +616,16 @@ body {
   position: relative;
   margin-block: 2rem;
   margin-top: 2.5rem;
+  opacity: 0;
 }
-#projects .title h1 {
+#projects .title h2 {
   color: #7E57C2;
   font-weight: bold;
   font-size: 6rem;
   text-shadow: 3px 3px 5px rgba(126, 87, 194, 0.5);
 }
 @media (max-width: 768px) {
-  #projects .title h1 {
+  #projects .title h2 {
     font-size: 3rem;
   }
 }

@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("entry", entry);
         console.log("entry.isIntersecting", entry.isIntersecting);
         if (entry.isIntersecting) {
-          entry.target.firstElementChild.classList.add("slider-fade-in");
+          entry.target.classList.add("slider-fade-in");
           // observer.unobserve(entry.target);
         } else {
-          entry.target.firstElementChild.classList.remove("slider-fade-in");
+          entry.target.classList.remove("slider-fade-in");
         }
         console.log("entry.target.classList", entry.target.classList);
       });
