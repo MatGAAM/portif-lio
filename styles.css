@@ -68,7 +68,7 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url("./assets/bg/background-texture-7.png");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url("./assets/bg/background-texture-10.png");
   background-size: cover;
   background-position: center var(--parallax-offset, 0px);
   background-attachment: scroll;
